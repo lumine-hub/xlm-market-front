@@ -44,7 +44,7 @@ export function LuckyWheelPage()  {
             window.alert("抽奖失败 info: " + info + "  code:" + code);
             return;
         }
-        return data.awardId
+        return data.awardIndex - 1
     }
 
     const [buttons] = useState([
@@ -81,7 +81,7 @@ export function LuckyWheelPage()  {
             onEnd={
                 // @ts-ignore
                 prize => {
-                    alert('恭喜你抽到 ' + prize.fonts[0].text + ' 号奖品')
+                    alert('恭喜你抽到【' + prize.fonts[0].text + '】奖品ID【' + prize.fonts[0].id + '】')
                 }
             }
         />
