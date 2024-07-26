@@ -4,7 +4,6 @@ import Image from "next/image";
 import {LuckyWheelPage} from "@/app/pages/lucky/lucky-wheel-page";
 import {LuckyGridPage} from "@/app/pages/lucky/lucky-grid-page";
 import React from "react";
-import LuckySlotMachine from "@/app/pages/lucky/lucky-slot-machine";
 import dynamic from "next/dynamic";
 
 const StrategyArmoryButton = dynamic(async()=>(await import("./components/StrategyArmory")).StrategyArmory)
