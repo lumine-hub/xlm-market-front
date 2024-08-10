@@ -8,6 +8,7 @@ import {queryRaffleAwardList, draw} from '@/apis'
 // @ts-ignore
 import {RaffleAwardVO} from "@/types/RaffleAwardVO";
 
+// @ts-ignore
 export function LuckyWheelPage() {
     const [prizes, setPrizes] = useState([{}])
     const myLucky = useRef()
