@@ -4,7 +4,6 @@ import React, {useState, useRef, useEffect, useContext} from 'react'
 // @ts-ignore
 import {LuckyGrid} from '@lucky-canvas/react'
 import {draw, queryRaffleAwardList} from "@/apis";
-// @ts-ignore
 import {RaffleAwardVO} from "@/types/RaffleAwardVO";
 
 /**

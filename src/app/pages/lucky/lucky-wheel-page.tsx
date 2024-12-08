@@ -5,11 +5,10 @@ import React, {useEffect, useRef, useState} from 'react'
 import {LuckyWheel} from '@lucky-canvas/react'
 
 import {queryRaffleAwardList, draw} from '@/apis'
-// @ts-ignore
 import {RaffleAwardVO} from "@/types/RaffleAwardVO";
 
 // @ts-ignore
-export function LuckyWheelPage() {
+export function LuckyWheelPage({handleRefresh}) {
     const [prizes, setPrizes] = useState([{}])
     const myLucky = useRef()
 
@@ -88,6 +87,13 @@ export function LuckyWheelPage() {
                     randomRaffleHandle().then(prizeIndex => {
                             // @ts-ignore
                             myLucky.current.stop(prizeIndex);
+
+                            const timer = setTimeout(() => {
+                                handleRefresh()
+                            }, 550);
+
+                            // 清除定时器，以防组件在执行前被卸载
+                            return () => clearTimeout(timer);
                         }
                     );
 
